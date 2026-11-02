@@ -1,0 +1,445 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Use cases" id="Use-cases">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="system" value="Hotel booking app" style="whiteSpace=wrap;html=0;fontSize=13;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="40" width="520" height="630" as="geometry" />
+        </mxCell>
+        <mxCell id="actor0" value="Guest" style="whiteSpace=wrap;html=0;fontSize=13;shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="50" y="130" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="actor1" value="Receptionist" style="whiteSpace=wrap;html=0;fontSize=13;shape=umlActor;" vertex="1" parent="1">
+          <mxGeometry x="50" y="430" width="80" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="goal0" value="Search free rooms" style="whiteSpace=wrap;html=0;fontSize=13;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="430" y="110" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e00" value="" source="actor0" target="goal0" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="" source="actor1" target="goal0" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="goal1" value="Book a room" style="whiteSpace=wrap;html=0;fontSize=13;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="430" y="240" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e01" value="" source="actor0" target="goal1" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="" source="actor1" target="goal1" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="goal2" value="View a booking" style="whiteSpace=wrap;html=0;fontSize=13;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="430" y="370" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e02" value="" source="actor0" target="goal2" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" value="" source="actor1" target="goal2" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="goal3" value="Cancel a booking" style="whiteSpace=wrap;html=0;fontSize=13;ellipse;" vertex="1" parent="1">
+          <mxGeometry x="430" y="500" width="230" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="e03" value="" source="actor0" target="goal3" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" value="" source="actor1" target="goal3" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Classes" id="Classes">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="service" value="BookingService&#10;────────────&#10;rooms&#10;────────────&#10;FindFreeRooms(stay)&#10;Reserve(guest, room, stay)&#10;Cancel(id)" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="20" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="store" value="ReservationStore&#10;────────────&#10;rows&#10;────────────&#10;HasOverlap(room, stay)&#10;Save(reservation), Find(id)&#10;CountConfirmed(room, stay)" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="240" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="email" value="EmailSender&#10;────────────&#10;Sent&#10;────────────&#10;SendConfirmation(reservation)" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="730" y="240" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="status" value="«enumeration»&#10;ReservationStatus&#10;────────────&#10;Confirmed&#10;Cancelled" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="240" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="guest" value="Guest&#10;────────────&#10;Name, Email" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="30" y="540" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="reservation" value="Reservation&#10;────────────&#10;Id, Status&#10;────────────&#10;Blocks(room, stay)&#10;Cancel()" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="540" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="room" value="Room&#10;────────────&#10;Number, Type" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="570" y="540" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="dates" value="DateRange&#10;────────────&#10;CheckIn, CheckOut&#10;────────────&#10;IsValid(), Overlaps(other)" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="820" y="540" width="230" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="uses" source="service" target="store" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="uses" source="service" target="email" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="has 1" source="reservation" target="status" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="1 keeps 0..*" source="store" target="reservation" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="1 makes 0..*" source="guest" target="reservation" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="0..* reserves 1" source="reservation" target="room" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="1 owns stay dates 1" source="reservation" target="dates" style="whiteSpace=wrap;html=0;fontSize=13;startArrow=diamond;startFill=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Sequence - book" id="Sequence---book">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p0" value="Maya" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life0" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145" y="80" as="sourcePoint" />
+            <mxPoint x="145" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="BookingService" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life1" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="80" as="sourcePoint" />
+            <mxPoint x="415" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2" value="ReservationStore" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="580" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life2" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="80" as="sourcePoint" />
+            <mxPoint x="685" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3" value="EmailSender" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="850" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life3" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="955" y="80" as="sourcePoint" />
+            <mxPoint x="955" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg1" value="1. Reserve(Maya, R7, 12–14 Nov)" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145" y="210" as="sourcePoint" />
+            <mxPoint x="415" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="2. HasOverlap(R7, 12–14 Nov)" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="280" as="sourcePoint" />
+            <mxPoint x="685" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="3. false" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="350" as="sourcePoint" />
+            <mxPoint x="415" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="4. Save(R101, Confirmed)" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="420" as="sourcePoint" />
+            <mxPoint x="685" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5" value="5. SendConfirmation(R101)" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="490" as="sourcePoint" />
+            <mxPoint x="955" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" value="6. Accepted R101" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="560" as="sourcePoint" />
+            <mxPoint x="145" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Sequence - cancel" id="Sequence---cancel">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p0" value="Maya" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life0" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145" y="80" as="sourcePoint" />
+            <mxPoint x="145" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1" value="BookingService" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="310" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life1" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="80" as="sourcePoint" />
+            <mxPoint x="415" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p2" value="ReservationStore" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="580" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life2" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="80" as="sourcePoint" />
+            <mxPoint x="685" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p3" value="R101" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="850" y="30" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="life3" style="dashed=1;endArrow=none;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="955" y="80" as="sourcePoint" />
+            <mxPoint x="955" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg1" value="1. Cancel(&quot;R101&quot;)" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="145" y="210" as="sourcePoint" />
+            <mxPoint x="415" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="2. Find(&quot;R101&quot;)" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="280" as="sourcePoint" />
+            <mxPoint x="685" y="280" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="3. R101" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="685" y="350" as="sourcePoint" />
+            <mxPoint x="415" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="4. Cancel()" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="420" as="sourcePoint" />
+            <mxPoint x="955" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5" value="5. true: now Cancelled" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="955" y="490" as="sourcePoint" />
+            <mxPoint x="415" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" value="6. true" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="415" y="560" as="sourcePoint" />
+            <mxPoint x="145" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Activity - book" id="Activity---book">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="" style="whiteSpace=wrap;html=0;fontSize=13;ellipse;fillColor=#222222;" vertex="1" parent="1">
+          <mxGeometry x="390" y="20" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="valid" value="Check-out after&#10;check-in?" style="whiteSpace=wrap;html=0;fontSize=13;rhombus;" vertex="1" parent="1">
+          <mxGeometry x="310" y="90" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="invalid" value="InvalidDates&#10;save nothing" style="whiteSpace=wrap;html=0;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="110" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="overlap" value="Confirmed booking&#10;shares a night?" style="whiteSpace=wrap;html=0;fontSize=13;rhombus;" vertex="1" parent="1">
+          <mxGeometry x="310" y="260" width="190" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="unavailable" value="Unavailable&#10;save nothing" style="whiteSpace=wrap;html=0;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="660" y="280" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="save" value="Save reservation as Confirmed" style="whiteSpace=wrap;html=0;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="420" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="send" value="Send confirmation email" style="whiteSpace=wrap;html=0;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="530" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="accepted" value="Accepted + reservation id" style="whiteSpace=wrap;html=0;fontSize=13;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="640" width="250" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="" style="whiteSpace=wrap;html=0;fontSize=13;ellipse;shape=doubleEllipse;fillColor=#222222;" vertex="1" parent="1">
+          <mxGeometry x="390" y="740" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="e0" value="" source="start" target="valid" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" value="No" source="valid" target="invalid" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="Yes" source="valid" target="overlap" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="Yes" source="overlap" target="unavailable" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="No" source="overlap" target="save" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="" source="save" target="send" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="" source="send" target="accepted" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="" source="accepted" target="end" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Classes - after" id="Classes---after">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="service" value="BookingService&#10;FindFreeRooms / Reserve / Cancel" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="30" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="store" value="«interface» IReservationStore&#10;Count / HasOverlap / Save / Find" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sender" value="«interface» INotificationSender&#10;SendConfirmation" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="700" y="240" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="memory" value="InMemoryReservationStore&#10;list storage" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="email" value="EmailNotificationSender&#10;simulated email" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="480" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="sms" value="SmsNotificationSender&#10;simulated SMS" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="870" y="480" width="250" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="a" value="uses" source="service" target="store" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b" value="uses" source="service" target="sender" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c" value="implements" source="memory" target="store" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=block;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d" value="implements" source="email" target="sender" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=block;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e" value="implements" source="sms" target="sender" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=block;endFill=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Context map" id="Context-map">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="rooms" value="Rooms&#10;Room catalog / type / price" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="60" y="80" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="reservations" value="Reservations&#10;Stay / Confirmed / Cancelled&#10;Owns no-overlap rule" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="80" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications" value="Notifications&#10;Confirmation / Sent / Failed" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="800" y="80" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="payments" value="Payments&#10;Deposit / Paid / Declined" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="430" y="440" width="260" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="a" value="All() → Room list" source="reservations" target="rooms" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b" value="Confirmation message" source="reservations" target="notifications" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c" value="Planned: TakeDeposit(price)" source="reservations" target="payments" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="d" value="Planned: price lookup" source="payments" target="rooms" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Modules" id="Modules">
+    <mxGraphModel page="1" pageWidth="1169" pageHeight="827" grid="1" gridSize="10">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="app" value="One console application / one deployment" style="whiteSpace=wrap;html=0;fontSize=13;verticalAlign=top;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="1090" height="650" as="geometry" />
+        </mxCell>
+        <mxCell id="main" value="Program.cs&#10;Composition root" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="70" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="rooms" value="Rooms&#10;Public: Room, IRoomCatalog&#10;Internal: InMemoryRoomCatalog" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="270" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="reservations" value="Reservations&#10;Public: BookingService, domain, IReservationStore&#10;Internal: InMemoryReservationStore" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="270" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="notifications" value="Notifications&#10;Public: Confirmation, INotificationSender&#10;Internal: Email / SMS senders" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="790" y="270" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="payments" value="Payments&#10;Public: IPaymentService, PaymentStatus&#10;Internal: SimulatedPaymentService" style="whiteSpace=wrap;html=0;fontSize=13;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="420" y="500" width="280" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="wire0" value="wires" source="main" target="rooms" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire1" value="wires" source="main" target="reservations" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire2" value="wires" source="main" target="notifications" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wire3" value="wires" source="main" target="payments" style="whiteSpace=wrap;html=0;fontSize=13;dashed=1;endArrow=open;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a" value="IRoomCatalog only" source="reservations" target="rooms" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b" value="INotificationSender only" source="reservations" target="notifications" style="whiteSpace=wrap;html=0;fontSize=13;endArrow=block;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
